@@ -1,0 +1,5 @@
+name: GildenPlugin
+author: IchMagOmasKekse
+version: 1.0
+main: me.ichmagomaskekse.de.GildenSystem
+commands:
