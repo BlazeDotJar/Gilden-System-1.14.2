@@ -7,6 +7,8 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import me.ichmagomaskekse.de.events.GildeJoinEvent;
+
 public class Gilde {
 	
 	private GildenSystem pl = GildenSystem.getInstance();
@@ -37,8 +39,10 @@ public class Gilde {
 			members.remove(uuid);
 			members.put(uuid, rolle);
 			if(savedata)saveData();
+			Bukkit.getPluginManager().callEvent(new GildeJoinEvent(Bukkit.getPlayer(uuid), this, true));
 			return true;
 		} else {
+			Bukkit.getPluginManager().callEvent(new GildeJoinEvent(Bukkit.getPlayer(uuid), this, false));
 			return false;
 		}
 	}

@@ -12,6 +12,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.ichmagomaskekse.de.events.GildeCreateEvent;
+import me.ichmagomaskekse.de.listener.GildenListener;
 
 public class GildenSystem extends JavaPlugin implements Listener {
 	
@@ -51,6 +52,7 @@ public class GildenSystem extends JavaPlugin implements Listener {
 	}
 	private void postInit() {
 		this.getServer().getPluginManager().registerEvents(this, this);
+		new GildenListener();
 	}
 	
 	public boolean createNewGilde(String name) {
