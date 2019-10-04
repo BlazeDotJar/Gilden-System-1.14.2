@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class Gilde {
@@ -19,6 +20,7 @@ public class Gilde {
 	public Gilde(String name) {
 		this.name = name;
 		saveData(false);
+		Bukkit.broadcastMessage("Gilde wurde erstellt");
 	}
 	
 	//Füge einen Spieler zur Gilde hinzu mit entsprechender Rolle
